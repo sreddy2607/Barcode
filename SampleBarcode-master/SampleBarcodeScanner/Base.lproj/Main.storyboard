@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S07-Pi-Fex">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleBarcodeScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjh-TS-5lj">
+                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Q2s-ck-Pet"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5L-Ft-trU" customClass="BarcodeScanView" customModule="SampleBarcodeScanner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="143" width="375" height="635"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E5L-Ft-trU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6DH-pm-10P"/>
+                            <constraint firstItem="E5L-Ft-trU" firstAttribute="top" secondItem="Cjh-TS-5lj" secondAttribute="bottom" constant="-1" id="I2q-LP-Qse"/>
+                            <constraint firstItem="E5L-Ft-trU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TRd-Le-qZG"/>
+                            <constraint firstItem="Cjh-TS-5lj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xh7-gR-9uv"/>
+                            <constraint firstItem="E5L-Ft-trU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dKD-nH-ovt"/>
+                            <constraint firstItem="Cjh-TS-5lj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mT1-l1-11a"/>
+                            <constraint firstItem="Cjh-TS-5lj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="swa-63-Pdr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v9c-do-erT">
+                        <barButtonItem key="rightBarButtonItem" image="flashofficon" id="QNL-Ti-qp1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="turnFlashOnOrOff:" destination="BYZ-38-t0r" id="0NL-Rq-WFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barcodeScanView" destination="E5L-Ft-trU" id="BgT-nX-DBK"/>
+                        <outlet property="switchBarcodeType" destination="Cjh-TS-5lj" id="B1Z-Wp-06p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648.79999999999995" y="-548.27586206896558"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MhG-Ab-ef5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S07-Pi-Fex" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zxm-sx-nSg">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.094117647060000004" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.094117647060000004" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="73F-mG-m1G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JC5-Ge-Tf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127.2" y="-548.27586206896558"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flashofficon" width="24" height="24"/>
+    </resources>
+</document>
